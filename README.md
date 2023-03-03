@@ -155,7 +155,7 @@ To run netDFT band structure calculation, execute this command on terminal. You 
      
 ## Example of Cu's band structure calculations
 
-<img src="https://github.com/AgungDanuWijaya/netDFT/blob/master/cu_fix.png" alt="dftk logo" height="400px" />
+<img src="https://github.com/AgungDanuWijaya/netDFT/blob/main/cu_fix.png" alt="dftk logo" height="400px" />
 The input file for this example can be accessed in the example folder.
 
 ## Cluster band structure calculations
