@@ -1,7 +1,7 @@
-<img src="https://github.com/AgungDanuWijaya/jDFT/blob/master/android-chrome-512x512.png" alt="dftk logo" height="90px" />
+<img src="https://github.com/AgungDanuWijaya/netDFT/blob/master/android-chrome-512x512.png" alt="dftk logo" height="90px" />
 
-# jDFT : JAVA Density Functional Theory For Solid 
-jDFT is a Java program to solve the KSDFT equation using the pseudopotential method to get a solid's band structure and total energy.
+# netDFT : JAVA Density Functional Theory For Solid 
+netDFT is a Java program to solve the KSDFT equation using the pseudopotential method to get a solid's band structure and total energy.
 ## Features
 - SCF with electron density mixing
 - Band structure calculations
@@ -81,9 +81,9 @@ Total energy
     }
 
 For this example, the psudo files can be found in the psudo folder.
-To run jDFT total energy calculation, execute this command on terminal. You have to run this command inside the jDFT folder. The results of the calculations will be stored in the out.dat file.
+To run netDFT total energy calculation, execute this command on terminal. You have to run this command inside the netDFT folder. The results of the calculations will be stored in the out.dat file.
 
-    java -jar "url_jdft_folder/dist/jDFT.jar" url_input_file/input.dat > out.dat
+    java -jar "url_netDFT_folder/dist/netDFT.jar" url_input_file/input.dat > out.dat
      
 
 Band Structure
@@ -150,11 +150,11 @@ You must first perform a total energy calculation to perform a structural band c
         ]
     }
 
-To run jDFT band structure calculation, execute this command on terminal. You have to run this command inside the jDFT folder.
+To run netDFT band structure calculation, execute this command on terminal. You have to run this command inside the netDFT folder.
 
-    java -jar "url_jdft_folder/dist/jDFT.jar" url_input_file/input.dat > out.dat
+    java -jar "url_netDFT_folder/dist/netDFT.jar" url_input_file/input.dat > out.dat
      
 ## Example of Cu's band structure calculations
 
-<img src="https://github.com/AgungDanuWijaya/jDFT/blob/master/cu_fix.png" alt="dftk logo" height="400px" />
+<img src="https://github.com/AgungDanuWijaya/netDFT/blob/master/cu_fix.png" alt="dftk logo" height="400px" />
 The input file for this example can be accessed in the example folder.
