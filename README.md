@@ -157,3 +157,19 @@ To run netDFT band structure calculation, execute this command on terminal. You 
 
 <img src="https://github.com/AgungDanuWijaya/netDFT/blob/master/cu_fix.png" alt="dftk logo" height="400px" />
 The input file for this example can be accessed in the example folder.
+
+## Cluster band structure calculations
+
+<img src="https://github.com/AgungDanuWijaya/netDFT/blob/main/netdft.drawio.png" alt="dftk logo" height="400px" />
+1. Konfigurasi client
+   - ssh-keyscan -H -t rsa ip_job_control >> /url_folder/job_control
+   - ssh-keyscan -H -t rsa ip_worker_1 >> /url_folder/worker_1
+
+2. Konfigurasi job control
+    • ssh-keyscan -H -t rsa ip_job_control >> /root/.shh/known_ssh
+    • install mysql server
+    • run script WORK.SQL on mysql server 
+    • copy netDFT on  /root/
+
+3. Konfigurasi Worker
+copy netDFT on  /root/
