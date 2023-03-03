@@ -1,4 +1,3 @@
-<img src="https://github.com/AgungDanuWijaya/netDFT/blob/master/android-chrome-512x512.png" alt="dftk logo" height="90px" />
 
 # netDFT : JAVA Density Functional Theory For Solid 
 netDFT is a Java program to solve the KSDFT equation using the pseudopotential method to get a solid's band structure and total energy.
