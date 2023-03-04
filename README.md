@@ -166,12 +166,12 @@ The input file for this example can be accessed in the example folder.
   - ssh-keyscan -H -t rsa ip_worker_1 >> /url_folder/worker_1
 
 - Job control configuration
-  - ssh-keyscan -H -t rsa ip_job_control >> /root/.shh/known_ssh
   - install mysql server (https://dev.mysql.com/downloads/mysql/)
   - run script WORK.SQL on mysql server . You can get script from https://github.com/AgungDanuWijaya/netDFT/blob/main/Dump20230304.sql
   - copy netDFT on  /root/
 
 - Worker Configuration
+  - ssh-keyscan -H -t rsa ip_job_control >> /root/.shh/known_ssh
   - copy netDFT on  /root/
 
 - Running netDFT on cluster
