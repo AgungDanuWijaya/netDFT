@@ -1,4 +1,3 @@
-
 # netDFT : JAVA Density Functional Theory For Solid 
 netDFT is a Java program to solve the KSDFT equation using the pseudopotential method to get a solid's band structure and total energy.
 ## Features
@@ -162,15 +161,65 @@ The input file for this example can be accessed in the example folder.
 
 <img src="https://github.com/AgungDanuWijaya/netDFT/blob/main/netdft.drawio.png" alt="dftk logo" height="400px" />
 
-- Konfigurasi client
+- Client configuration
   - ssh-keyscan -H -t rsa ip_job_control >> /url_folder/job_control
   - ssh-keyscan -H -t rsa ip_worker_1 >> /url_folder/worker_1
 
-- Konfigurasi job control
-  - ssh-keyscan -H -t rsa ip_job_control >> /root/.shh/known_ssh
-  - install mysql server
-  - run script WORK.SQL on mysql server 
+- Job control configuration
+  - install mysql server (https://dev.mysql.com/downloads/mysql/)
+  - run script WORK.SQL on mysql server . You can get script from https://github.com/AgungDanuWijaya/netDFT/blob/main/Dump20230304.sql
   - copy netDFT on  /root/
 
-- Konfigurasi Worker
+- Worker Configuration
+  - ssh-keyscan -H -t rsa ip_job_control >> /root/.shh/known_ssh
   - copy netDFT on  /root/
+
+- Running netDFT on cluster
+  - Copy psudo file on directory /root/kuda on server job control
+  - Open netDFT on netbeans (https://netbeans.apache.org/)
+  - running input_cluster.java in package cluster
+  - running run_cluster.java in package cluster
+------------
+        
+	{
+	"cs": {
+		"host": "your_ip_database and ssh serve",
+		"user": "your ssh user",
+		"user_db": "your_mysql_user",
+		"pass": "your_database_and_ssh pass, please make same database and ssh password ",
+		"key": "/root/.ssh/known_hosts"
+	},
+
+	"degauss_": 0.02,
+	"status": "bands",
+	"smar": 1,
+	"random": 0,
+	"usp": 1.0,
+	"celldm": [6.73, 0.0, 0.0, 0.0],
+	"ecutwfc": 25.0,
+	"ecutrho": 300.0,
+	"ibrav": 2,
+	"iband": 16,
+	"num_atom": 1,
+	"nat": 1,
+	"mix": 0.7,
+	"atom": ["Cu"],
+	"upf_url": ["/root/kuda/Cup.upf"],
+	"usp_": [1],
+	"pos": [
+		[0.0, 0.0, 0.0]
+	],
+	"atom_pos": [0],
+	"weig": [2.0],
+	"k_point": []
+    }
+    
+Above is exampe of input configuration file for get band structure of Cu. The location input file must be setting on input_cluster.java, in localDir.
+
+------------
+
+    String Server[] = {"ip_job_control", "ip_worker_1", "ip_worker_1", "ip_worker_1", "ip_worker_1"};
+    String key[] = {"/url_folder/job_control", "/url_folder/worker_1", "/url_folder/worker_2", "/url_folder/worker_3", "/url_folder/worker_4"};
+
+Please edit the server and host key on input_cluster.java and run_cluster.java, based on the Server and key array (above script) and the host key obtained in the previous step on the client configuration.  
+     
