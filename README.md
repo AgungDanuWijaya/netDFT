@@ -186,5 +186,5 @@ The input file for this example can be accessed in the example folder.
     String Server[] = {"ip_job_control", "ip_worker_1", "ip_worker_1", "ip_worker_1", "ip_worker_1"};
     String key[] = {"/url_folder/job_control", "/url_folder/worker_1", "/url_folder/worker_2", "/url_folder/worker_3", "/url_folder/worker_4"};
 
-On Server and key array on input_cluster.java and run_cluster.java, please edit server and host key, with host key get from previous step on Client configuration.    
+Please edit the server and host key on input_cluster.java and run_cluster.java, based on the Server and key array (above script) and the host key obtained in the previous step on the client configuration.  
      
