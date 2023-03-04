@@ -186,7 +186,7 @@ The input file for this example can be accessed in the example folder.
 		"host": "your_ip_database and ssh serve",
 		"user": "your ssh user",
 		"user_db": "your_mysql_user",
-		"pass": "your_database_and_ssh pass, please make same database and ssh password ",
+		"pass": "your_database_and_ssh pass, please make same database and ssh password in all computer",
 		"key": "/root/.ssh/known_hosts"
 	},
 
