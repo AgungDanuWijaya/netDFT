@@ -178,13 +178,12 @@ The input file for this example can be accessed in the example folder.
 - Running netDFT on cluster
   - Copy psudo file on directory /root/kuda on server job control
   - Open netDFT on netbeans (https://netbeans.apache.org/)
-  - running input_cluster.java in package cluster
 
-SFTP and SSH Configuration
+SFTP and SSH Configuration on input_cluster.java and run_cluster.java file
 ------------
 
     String Server[] = {"ip_job_control", "ip_worker_1", "ip_worker_1", "ip_worker_1", "ip_worker_1"};
     String key[] = {"/url_folder/job_control", "/url_folder/worker_1", "/url_folder/worker_2", "/url_folder/worker_3", "/url_folder/worker_4"};
      
-
+  - running input_cluster.java in package cluster
   - running run_cluster.java in package cluster
