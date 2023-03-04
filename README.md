@@ -167,7 +167,7 @@ The input file for this example can be accessed in the example folder.
 
 - Job control configuration
   - ssh-keyscan -H -t rsa ip_job_control >> /root/.shh/known_ssh
-  - install mysql server
+  - install mysql server (https://dev.mysql.com/downloads/mysql/)
   - run script WORK.SQL on mysql server . You can get script from https://github.com/AgungDanuWijaya/netDFT/blob/main/Dump20230304.sql
   - copy netDFT on  /root/
 
