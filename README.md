@@ -178,9 +178,10 @@ The input file for this example can be accessed in the example folder.
   - Copy psudo file on directory /root/kuda on server job control
   - Open netDFT on netbeans (https://netbeans.apache.org/)
   - running input_cluster.java in package cluster
-
+  - running run_cluster.java in package cluster
 ------------
-{
+        
+	{
 	"cs": {
 		"host": "your_ip_database and ssh serve",
 		"user": "your ssh user",
@@ -210,13 +211,10 @@ The input file for this example can be accessed in the example folder.
 	],
 	"atom_pos": [0],
 	"weig": [2.0],
-	"k_point": [
-		[0.125, 0.125, 0.125]
-	]
-}
-
-        
-  - running run_cluster.java in package cluster
+	"k_point": []
+    }
+    
+Above is exampe of input configuration file for get band structure of Cu. The location input file must be setting on input_cluster.java, in localDir.
 
 ------------
 
