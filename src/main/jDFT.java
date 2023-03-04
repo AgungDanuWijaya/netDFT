@@ -43,7 +43,10 @@ public class jDFT {
         double k_point[][] = ao.copy(init.k_point);
         init.weig = new double[1];
         init.k_point = new double[1][];
+        init.cluster = 0;
         if (init.status.equals("scf")) {
+            init.weig[0] = weig[0];
+            init.k_point[0] = k_point[0];
             utama_gen ug = new utama_gen();
             ug.main(init);
         } else if (init.status.equals("bands")) {
@@ -51,7 +54,7 @@ public class jDFT {
                 init.weig[0] = weig[i];
                 init.k_point[0] = k_point[i];
                 utama_gen_band_ ug = new utama_gen_band_();
-                ug.main(init,i);
+                ug.main(init, i);
             }
 
         }

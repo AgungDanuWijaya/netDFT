@@ -1,5 +1,6 @@
-package main;
+package cluster;
 
+import main.*;
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
@@ -13,7 +14,7 @@ import java.io.IOException;
  *
  * @author www.codejava.net
  */
-public class FTPDownloadFileDemo {
+public class input_cluster {
 
     public static void main(String[] args) throws IOException, JSchException, SftpException {
 
@@ -24,17 +25,14 @@ public class FTPDownloadFileDemo {
             JSch jsch = new JSch();
             jsch.setKnownHosts(key[i]);
             Session jschSession = jsch.getSession("root", Server[i]);
-            jschSession.setPassword("DWAgungDanuWijaya_971992^");
+            jschSession.setPassword("pass_ssh");
             jschSession.connect();
             ChannelSftp channelSftp = (ChannelSftp) jschSession.openChannel("sftp");
             channelSftp.connect();
 
             String remoteFile = "/root/input";
             String localDir = "/home/agung/input";
-         
-            //String remoteFile = "/root/kuda/Cup.upf";
-            //String localDir = "/home/agung/Documents/solid/q-e-qe-6__.6/pseudo/Cup.upf";
-
+                     
             channelSftp.put(localDir, remoteFile);
             System.out.println("main.FTPDownloadFileDemo.main()");
             channelSftp.exit();

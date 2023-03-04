@@ -1,4 +1,4 @@
-package main;
+package cluster;
 
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
@@ -24,7 +24,7 @@ public class sebar_dist {
          JSch jsch = new JSch();
        jsch.setKnownHosts(key[i]);
         Session jschSession = jsch.getSession("root", Server[i]);
-        jschSession.setPassword("DWAgungDanuWijaya_971992^");
+        jschSession.setPassword("pass_ssh");
         jschSession.connect();
         ChannelSftp channelSftp = (ChannelSftp) jschSession.openChannel("sftp");
         channelSftp.connect();

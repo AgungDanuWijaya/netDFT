@@ -19,7 +19,7 @@ import tools.array_operation;
  *
  * @author agung
  */
-public class jDFT_debug_singgke {
+public class jDFT_debug_singgle {
 
     /**
      * @param args the command line arguments

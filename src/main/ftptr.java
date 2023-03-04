@@ -15,25 +15,29 @@ import java.io.InputStream;
  * @author root
  */
 public class ftptr extends Thread {
-String key[];
-        String Server[];
-        int i_;
-    public ftptr(String Server[],String key[],int i_) {
-    this.Server=Server;
-    this.key=key;
-    this.i_=i_;
+
+    String key[];
+    String Server[];
+    int i_;
+    String pass;
+
+    public ftptr(String Server[], String key[], int i_,String pass) {
+        this.Server = Server;
+        this.key = key;
+        this.i_ = i_;
+        this.pass=pass;
 
     }
 
     public void run() {
         try {
-            System.err.println("ii"+i_);
+            System.err.println("ii" + i_);
             JSch jsch = new JSch();
             jsch.setKnownHosts(key[i_]);
             Session session = jsch.getSession("root", Server[i_]);
-            session.setPassword("DWAgungDanuWijaya_971992^");
+            session.setPassword(pass);
             session.connect();
-            String command = "java -jar /root/kuda/dist/jDFT.jar input " + (i_ + 1) + "";
+            String command = "java -jar /root/kuda/dist/netDFT.jar input " + (i_ + 1) + "";
             System.out.println(command);
             Channel channel = session.openChannel("exec");
             ((ChannelExec) channel).setCommand(command);
