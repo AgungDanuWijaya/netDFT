@@ -169,8 +169,13 @@ The input file for this example can be accessed in the example folder.
 - Konfigurasi job control
   - ssh-keyscan -H -t rsa ip_job_control >> /root/.shh/known_ssh
   - install mysql server
-  - run script WORK.SQL on mysql server 
+  - run script WORK.SQL on mysql server . You can get script from https://github.com/AgungDanuWijaya/netDFT/blob/main/Dump20230304.sql
   - copy netDFT on  /root/
 
 - Konfigurasi Worker
   - copy netDFT on  /root/
+- Running netDFT on cluster
+  - Copy psudo file on directory /root/kuda on server job control
+  - Open netDFT on netbeans (https://netbeans.apache.org/)
+  - running input_cluster.java in package cluster
+  - running run_cluster.java in package cluster
