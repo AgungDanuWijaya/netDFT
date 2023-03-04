@@ -178,6 +178,44 @@ The input file for this example can be accessed in the example folder.
   - Copy psudo file on directory /root/kuda on server job control
   - Open netDFT on netbeans (https://netbeans.apache.org/)
   - running input_cluster.java in package cluster
+
+------------
+{
+	"cs": {
+		"host": "your_ip_database and ssh serve",
+		"user": "your ssh user",
+		"user_db": "your_mysql_user",
+		"pass": "your_database_and_ssh pass, please make same database and ssh password ",
+		"key": "/root/.ssh/known_hosts"
+	},
+
+	"degauss_": 0.02,
+	"status": "bands",
+	"smar": 1,
+	"random": 0,
+	"usp": 1.0,
+	"celldm": [6.73, 0.0, 0.0, 0.0],
+	"ecutwfc": 25.0,
+	"ecutrho": 300.0,
+	"ibrav": 2,
+	"iband": 16,
+	"num_atom": 1,
+	"nat": 1,
+	"mix": 0.7,
+	"atom": ["Cu"],
+	"upf_url": ["/root/kuda/Cup.upf"],
+	"usp_": [1],
+	"pos": [
+		[0.0, 0.0, 0.0]
+	],
+	"atom_pos": [0],
+	"weig": [2.0],
+	"k_point": [
+		[0.125, 0.125, 0.125]
+	]
+}
+
+        
   - running run_cluster.java in package cluster
 
 ------------
