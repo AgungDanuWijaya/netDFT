@@ -162,20 +162,29 @@ The input file for this example can be accessed in the example folder.
 
 <img src="https://github.com/AgungDanuWijaya/netDFT/blob/main/netdft.drawio.png" alt="dftk logo" height="400px" />
 
-- Konfigurasi client
+- Client configuration
   - ssh-keyscan -H -t rsa ip_job_control >> /url_folder/job_control
   - ssh-keyscan -H -t rsa ip_worker_1 >> /url_folder/worker_1
 
-- Konfigurasi job control
+- Job control configuration
   - ssh-keyscan -H -t rsa ip_job_control >> /root/.shh/known_ssh
   - install mysql server
   - run script WORK.SQL on mysql server . You can get script from https://github.com/AgungDanuWijaya/netDFT/blob/main/Dump20230304.sql
   - copy netDFT on  /root/
 
-- Konfigurasi Worker
+- Worker Configuration
   - copy netDFT on  /root/
+
 - Running netDFT on cluster
   - Copy psudo file on directory /root/kuda on server job control
   - Open netDFT on netbeans (https://netbeans.apache.org/)
   - running input_cluster.java in package cluster
+
+SFTP and SSH Configuration
+------------
+
+    String Server[] = {"ip_job_control", "ip_worker_1", "ip_worker_1", "ip_worker_1", "ip_worker_1"};
+    String key[] = {"/url_folder/job_control", "/url_folder/worker_1", "/url_folder/worker_2", "/url_folder/worker_3", "/url_folder/worker_4"};
+     
+
   - running run_cluster.java in package cluster
