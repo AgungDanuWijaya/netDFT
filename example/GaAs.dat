@@ -2,13 +2,13 @@
 	"degauss_": 0.02,
 	"status": "scf",
 	"smar": 0,
-	"random": 0,
+	"random": 1,
 	"usp": 0.0,
-	"celldm": [5.653, 0.0, 0.0, 0.0],
+	"celldm": [10.6867, 0.0, 0.0, 0.0],
 	"ecutwfc": 60.0,
-	"ecutrho": 240.0,
-	"ibrav": 0,
-	"iband": 6,
+	"ecutrho": 244.0,
+	"ibrav": 2,
+	"iband": 16,
 	"num_atom": 2,
 	"nat": 2,
 	"mix": 0.7,
@@ -23,9 +23,9 @@
 	],
 	"pos": [
 		[0.0, 0.0, 0.0],
-		[0.5, 0.5, 0.5]
+		[0.25, 0.25, 0.25]
 	],
-	"atom_pos": [0, 1],
+	"atom_pos": [1, 0],
 	"weig": [2.0],
 	"k_point": [
 		[0.0, 0.0, 0.0]
