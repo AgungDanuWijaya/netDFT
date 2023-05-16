@@ -1,5 +1,8 @@
 package lapack;
 
+import init_calc.aainit;
+import java.io.FileWriter;
+import java.io.IOException;
 import tools.array_operation;
 
 public class JNIJava {
@@ -10,10 +13,56 @@ public class JNIJava {
 
     private native double[] sumsquaredc(int param[], double S[], double H[]);
 
+    public void tulis(String text, String fle) {
+        try {
+            FileWriter myWriter = new FileWriter(fle);
+            myWriter.write(text);
+            myWriter.close();
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
     public gev_object main(double H[][][], double S[][][], int iband) {
         double h[] = new double[H.length * H[0].length * 2];
         double s[] = new double[S.length * S[0].length * 2];
+        String H_r = "";
+        String H_i = "";
+       
+        
+        for (int i = 0; i < H.length; i++) {
+            for (int j = 0; j < H[i].length; j++) {
+                H_r = H_r + H[i][j][0] + " ";
+                H_i = H_i + H[i][j][1] + " ";
+            }
+            H_r = H_r + "\n";
+            H_i = H_i + "\n";
+        }
 
+        tulis(H_r, "data.txt");
+        tulis(H_i, "datac.txt");
+
+        H_r = "";
+        H_i = "";
+        for (int i = 0; i < S.length; i++) {
+            for (int j = 0; j < S[i].length; j++) {
+                H_r = H_r + S[i][j][0] + " ";
+                H_i = H_i + S[i][j][1] + " ";
+            }
+            H_r = H_r + "\n";
+            H_i = H_i + "\n";
+        }
+
+        tulis(H_r, "data_1.txt");
+        tulis(H_i, "data_1c.txt");
+        tulis(H.length + "", "dim");
+
+        array_operation ao = new array_operation();
+        
+       
+        
         for (int i = 0; i < H.length; i++) {
             for (int j = 0; j < H[i].length; j++) {
                 h[(i * H.length) + j] = H[i][j][0];
@@ -42,6 +91,9 @@ public class JNIJava {
             }
             //System.out.println("");
         }
+        System.out.println("lapack.JNIJava.main()");
+         ao.disp_imag(vec);
+        // ao.disp_imag(vec);
         /*System.out.println("vector0");
         for (int j = 0; j < iband; j++) {
             System.out.print(vec[0][j][0] + " , " + vec[0][j][1] + ",");
@@ -59,9 +111,10 @@ public class JNIJava {
         for (int i = H.length * H[0].length * 2; i < H.length * H[0].length * 2 + H.length; i++) {
             eigen[in] = res[i];
             eigen_[in] = res[i];
-            //System.out.print(eigen[in] + " , ");
+            //System.out.print(" hasil "+eigen[in] + " , ");
             in += 1;
         }
+        ao.disp(eigen);
         gev_object a = new gev_object();
         a.eigen = eigen;
         a.eigen_ = eigen_;

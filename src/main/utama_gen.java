@@ -39,15 +39,14 @@ public class utama_gen {
         double total = 9999999;
         HashMap<Integer, Double> total_list = new HashMap<>();
         for (int kloop = 0; kloop < weig.length; kloop++) {
-         
+
             params[kloop] = new init_AntDFT_gen().main(kloop, weig[kloop], init);
             params[kloop].scf = -1;
             params[kloop].smar = init.smar;
             params[kloop].max_base = 8;
             params[kloop].wk = ao.copy(weig);
             params[kloop].wg = new double[params[kloop].iband];
-         
-            
+
         }
 
         int total_iter = 0;
@@ -151,8 +150,14 @@ public class utama_gen {
                 mix_rho mr = new mix_rho();
                 mr.main_g(params[kloop], ik);
                 mr.main_r(params[kloop], ik);
-                //System.out.println((params[kloop].ewald + " " + params[kloop].etxc + " " + params[kloop].ehart + " " + params[kloop].eband + " " + params[kloop].deband + " " + params[kloop].demet) + " total energy");
-                double total_e = (params[kloop].ewald + params[kloop].etxc + params[kloop].ehart + params[kloop].eband + params[kloop].deband + params[kloop].demet);
+                System.out.println((params[kloop].ewald + " " + params[kloop].etxc + " " + params[kloop].ehart + " " + params[kloop].eband + " " + params[kloop].deband + " " + params[kloop].demet) + " total energy");
+                double total_e = 0;
+                if (params[kloop].smar == 1) {
+                    total_e = (params[kloop].ewald + params[kloop].etxc + params[kloop].ehart + params[kloop].eband + params[kloop].deband + params[kloop].demet);
+                } else if (params[kloop].smar == 0) {
+                    total_e = (params[kloop].ewald + params[kloop].etxc + params[kloop].ehart + params[kloop].eband + params[kloop].deband);
+                }
+
                 total_list.put(scf, total_e);
                 //System.out.println((params[kloop].ewald + params[kloop].etxc + params[kloop].ehart + params[kloop].eband + params[kloop].deband + params[kloop].demet) + " total energy" + Math.abs(total - total_e));
                 if (Math.abs(total - total_e) < Math.pow(10, -8)) {

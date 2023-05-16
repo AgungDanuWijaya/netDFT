@@ -1,8 +1,9 @@
 package energy;
 
+import java.io.IOException;
 import main.parameter;
 import java.util.HashMap;
-import lapack.JNIJava;
+import lapack.JNIJava_;
 import lapack.gev_object;
 import tools.array_operation;
 
@@ -12,7 +13,7 @@ import tools.array_operation;
  */
 public class diag_c {
 
-    public void main(parameter param, int ik) {
+    public void main(parameter param, int ik) throws IOException {
 
         array_operation ao = new array_operation();
         double atomicwfc_[][][] = param.atomicwfc_l;
@@ -35,7 +36,7 @@ public class diag_c {
             }
         }
 
-        gev_object a = new JNIJava().main(hal_, sc_, param.iband);
+        gev_object a = new JNIJava_().main(hal_, sc_, param.iband);
         double h_psi[][][] = param.h_psi_l;
 
         for (int i = 0; i < param.h_psi_2.get(ik).length; i++) {

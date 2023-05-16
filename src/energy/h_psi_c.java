@@ -3,7 +3,7 @@ package energy;
 import main.parameter;
 import fftw.fftw;
 import java.util.HashMap;
-import lapack.JNIJava;
+import lapack.JNIJava_;
 import lapack.gev_object;
 
 import tools.array_operation;

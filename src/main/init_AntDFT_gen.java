@@ -27,6 +27,7 @@ import init_calc.init_vkb;
 import init_calc.normalisasi;
 import init_calc.usnldiag;
 import init_calc.wfcinit;
+import java.io.IOException;
 import mixer.init_calbec;
 import mixer.interpolate;
 import tools.array_operation;
@@ -40,7 +41,7 @@ public class init_AntDFT_gen {
     /**
      * @param args the command line arguments
      */
-    public parameter main(int ik, double campur, init_data init) throws InterruptedException, ClassNotFoundException {
+    public parameter main(int ik, double campur, init_data init) throws InterruptedException, ClassNotFoundException, IOException {
         Date date = new Date();
         long t1 = date.getTime();
         array_operation ao = new array_operation();
