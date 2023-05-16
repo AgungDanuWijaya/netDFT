@@ -222,4 +222,6 @@ Above is exampe of input configuration file for get band structure of Cu. The lo
     String key[] = {"/url_folder/job_control", "/url_folder/worker_1", "/url_folder/worker_2", "/url_folder/worker_3", "/url_folder/worker_4"};
 
 Please edit the server and host key on input_cluster.java and run_cluster.java, based on the Server and key array (above script) and the host key obtained in the previous step on the client configuration.  
+## ScaLAPACk
+We've added ScaLAPACK to be an alternative to LAPACK. In the JNIJava_.java code file, You can choose to use gev_object a=new JNIJava().main(H, S, iband) for LAPACK, and gev_object a = new scalapackJava().main(H, S, iband) for ScaLAPACK.
      
